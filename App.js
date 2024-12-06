@@ -10,19 +10,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import HomeScreen from './screens/HomeScreen';
+import ListsScreen from './screens/ListsScreen';
 
-// Placeholder Screens for Tabs
-const HomeScreen = () => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text style={{ fontSize: 20 }}>Home Screen</Text>
-  </View>
-);
-
-const ListsScreen = () => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text style={{ fontSize: 20 }}>Lists Screen</Text>
-  </View>
-);
 
 // Bottom Tab Navigator
 const Tab = createBottomTabNavigator();
@@ -36,7 +26,7 @@ const BottomTabNavigator = () => (
         else if (route.name === 'Profile') iconName = 'person-outline';
         return <Icon name={iconName} size={size} color={color} />;
       },
-      tabBarActiveTintColor: 'tomato',
+      tabBarActiveTintColor: '#f46625',
       tabBarInactiveTintColor: 'gray',
       headerShown: false,
     })}
