@@ -27,7 +27,7 @@ const LoginScreen = () => {
                         text1: 'Success',
                         text2: 'Login successful!',
                     });
-                    navigation.navigate('Profile'); // Redirect to profile or main app page
+                    navigation.navigate('MainApp'); // Redirect to profile or main app page
                 } else {
                     Toast.show({
                         type: 'error',
