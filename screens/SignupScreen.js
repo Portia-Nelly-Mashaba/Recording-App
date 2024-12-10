@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Toast from 'react-native-toast-message'; 
+import Toast from 'react-native-toast-message';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -23,7 +22,6 @@ const SignupScreen = () => {
       });
       return;
     }
-
     try {
       const user = { name, email, password };
       await AsyncStorage.setItem('user', JSON.stringify(user));
@@ -52,7 +50,7 @@ const SignupScreen = () => {
         <Text style={styles.createAccount}>Create account</Text>
       </View>
       <View style={styles.inputContainer}>
-        <FontAwesome name={'user'} size={24} color={'#9A9A9A'} style={styles.inputIcon} />
+        <FontAwesome name="user" size={24} color="#9A9A9A" style={styles.inputIcon} />
         <TextInput
           style={styles.inputText}
           placeholder="Enter Name"
@@ -61,7 +59,7 @@ const SignupScreen = () => {
         />
       </View>
       <View style={styles.inputContainer}>
-        <AntDesign name={'mail'} size={24} color={'#9A9A9A'} style={styles.inputIcon} />
+        <AntDesign name="mail" size={24} color="#9A9A9A" style={styles.inputIcon} />
         <TextInput
           style={styles.inputText}
           placeholder="Enter Email"
@@ -70,7 +68,7 @@ const SignupScreen = () => {
         />
       </View>
       <View style={styles.inputContainer}>
-        <Fontisto name={'locked'} size={24} color={'#9A9A9A'} style={styles.inputIcon} />
+        <Fontisto name="locked" size={24} color="#9A9A9A" style={styles.inputIcon} />
         <TextInput
           style={styles.inputText}
           placeholder="Enter Password"
@@ -87,16 +85,18 @@ const SignupScreen = () => {
       </View>
       <Text style={styles.signUpText}>
         Already have an account?
-        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-          <Text style={{ textDecorationLine: 'underline' }}> Sign-in</Text>
-        </TouchableOpacity>
+        <Text
+          style={{ textDecorationLine: 'underline', color: '#007BFF' }}
+          onPress={() => navigation.navigate('Login')}
+        >
+          {' '}
+          Sign-in
+        </Text>
       </Text>
-      <Toast /> {/* Add the Toast component */}
+      <Toast />
     </View>
   );
 };
-
-export default SignupScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -164,3 +164,4 @@ const styles = StyleSheet.create({
   },
 });
 
+export default SignupScreen;

@@ -11,7 +11,6 @@ import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import HomeScreen from './screens/HomeScreen';
-import ListsScreen from './screens/ListsScreen';
 
 
 // Bottom Tab Navigator
@@ -22,7 +21,6 @@ const BottomTabNavigator = () => (
       tabBarIcon: ({ color, size }) => {
         let iconName;
         if (route.name === 'Home') iconName = 'home-outline';
-        else if (route.name === 'Lists') iconName = 'list-outline';
         else if (route.name === 'Profile') iconName = 'person-outline';
         return <Icon name={iconName} size={size} color={color} />;
       },
@@ -32,7 +30,6 @@ const BottomTabNavigator = () => (
     })}
   >
     <Tab.Screen name="Home" component={HomeScreen} />
-    <Tab.Screen name="Lists" component={ListsScreen} />
     <Tab.Screen name="Profile" component={ProfileScreen} />
   </Tab.Navigator>
 );
@@ -46,6 +43,7 @@ const App = () => {
         {/* Auth Screens */}
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Signup" component={SignupScreen} />
+
         {/* Main App */}
         <Stack.Screen name="MainApp" component={BottomTabNavigator} />
       </Stack.Navigator>
